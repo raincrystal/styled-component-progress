@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import CustomVerticalProgress from "./CustomVerticalProgress";
+import CustomVerticalProgress from './CustomVerticalProgress';
 
 const PanelWrapper = styled.div`
   background-color: white;
@@ -13,7 +13,7 @@ const PanelWrapper = styled.div`
   align-items: center;
 `;
 
-const progresses = [70, 35, 100, 60, 85];
+const progresses = [70, 50, 100, 60, 85];
 
 const ProgressPanel = ({className, width, height}) => {
   return (
@@ -31,4 +31,5 @@ ProgressPanel.defaultProps = {
   width: '500px',
   height: '200px',
 };
+
 export default ProgressPanel;

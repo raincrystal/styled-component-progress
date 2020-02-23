@@ -45,13 +45,23 @@ const getRandomColor = (index) => {
 
 const gradient = (index) => `linear-gradient(${getRandomColor(index)}, ${getRandomColor(index)})`;
 
+const validateProgress = (progress) => {
+  if (progress > 100) {
+    return 100;
+  } else if (progress < 0) {
+    return 0;
+  }
+
+  return progress;
+};
+
 const CustomVerticalProgress = ({progress, className, width, height, index}) => {
   return (
     <div style={{width, height}} className={className}>
       <ProgressBar>
-        <Progress style={{height: `${progress}%`, background: gradient(index)}} />
+        <Progress style={{height: `${validateProgress(progress)}%`, background: gradient(index)}} />
         <Label>
-          {progress ? progress : 0}
+          {validateProgress(progress)}
           <br />
           %
         </Label>
